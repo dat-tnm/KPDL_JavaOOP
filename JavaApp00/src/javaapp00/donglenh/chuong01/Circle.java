@@ -9,7 +9,7 @@ package javaapp00.donglenh.chuong01;
  *
  * @author Admin
  */
-public class Circle {
+public class Circle extends Shape{
     private int radius;
     private int x, y;
     
@@ -22,15 +22,24 @@ public class Circle {
         this.y = y;
     }
     
+    @Override
     public double calcPerimeter(){
         double result = 2*Math.PI*radius;
         return result;
     }
     
+    @Override
     public double calcArea(){
         double result = Math.PI*radius*radius;
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Chu vi hinh tron =" + calcPerimeter()+ "; Dien tich hinh tron =" + calcArea();
+    }
+    
+    
 
     public int getRadius() {
         return radius;

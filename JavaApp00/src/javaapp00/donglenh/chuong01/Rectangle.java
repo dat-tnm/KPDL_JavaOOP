@@ -9,7 +9,7 @@ package javaapp00.donglenh.chuong01;
  *
  * @author Admin
  */
-public class Rectangle {
+public class Rectangle extends Shape {
     private int upper_x, upper_y, lower_x, lower_y;
     
     public Rectangle(){}
@@ -21,12 +21,51 @@ public class Rectangle {
         this.lower_y = lower_y;
     }
     
+    @Override
     public double calcPerimeter(){
         return 2*(Math.abs(upper_x - lower_x) + Math.abs(upper_y - lower_y));
     }
     
+    @Override
     public double calcArea(){
         return Math.abs((upper_x - lower_x)*(upper_y - lower_y));
+    }
+    
+    @Override
+    public String toString() {
+        return "Chu vi hinh cn =" + calcPerimeter()+ "; Dien tich hinh cn =" + calcArea();
+    }
+
+    public int getUpper_x() {
+        return upper_x;
+    }
+
+    public void setUpper_x(int upper_x) {
+        this.upper_x = upper_x;
+    }
+
+    public int getUpper_y() {
+        return upper_y;
+    }
+
+    public void setUpper_y(int upper_y) {
+        this.upper_y = upper_y;
+    }
+
+    public int getLower_x() {
+        return lower_x;
+    }
+
+    public void setLower_x(int lower_x) {
+        this.lower_x = lower_x;
+    }
+
+    public int getLower_y() {
+        return lower_y;
+    }
+
+    public void setLower_y(int lower_y) {
+        this.lower_y = lower_y;
     }
     
     

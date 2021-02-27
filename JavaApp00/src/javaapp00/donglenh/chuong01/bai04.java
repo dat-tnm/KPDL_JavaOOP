@@ -11,12 +11,15 @@ package javaapp00.donglenh.chuong01;
  */
 public class bai04 {
     public static void main(String[] args){
-        Circle htron = new Circle(5, 1, 2);
-        System.out.println("Chu vi hinh tron =" + htron.calcPerimeter());
-        System.out.println("Dien tich hinh tron =" + htron.calcArea());
+        Shape htron = new Circle(5, 1, 2);
+//        System.out.println("Chu vi hinh tron =" + htron.calcPerimeter());
+//        System.out.println("Dien tich hinh tron =" + htron.calcArea());
+          System.out.println(htron.toString());
 
-        Rectangle hcn = new Rectangle(3, 15, 8, 5);
-        System.out.println("Chu vi hinh cn =" + hcn.calcPerimeter());
-        System.out.println("Dien tich hinh cn =" + hcn.calcArea());
+        Shape hcn = new Rectangle(3, 15, 8, 5);
+//        System.out.println("Chu vi hinh cn =" + hcn.calcPerimeter());
+//        System.out.println("Dien tich hinh cn =" + hcn.calcArea());
+          System.out.println(hcn.toString());
+
     }
 }

@@ -136,8 +136,8 @@ public class bai04 extends javax.swing.JFrame {
             Integer.parseInt(txtLowerY.getText())
         );
         
-        String result = "Dien tich hcn " + hcn.calcArea() + " Chu vi hcn " + hcn.calcPerimeter();
-        txtKetQua.append(result);
+//        String result = "Dien tich hcn " + hcn.calcArea() + " Chu vi hcn " + hcn.calcPerimeter();
+        txtKetQua.append(hcn.toString());
         
     }//GEN-LAST:event_btn1ActionPerformed
 
