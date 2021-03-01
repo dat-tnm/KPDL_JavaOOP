@@ -5,8 +5,16 @@
  */
 package javaapp00.chuong05.logic;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -71,5 +79,46 @@ public class FileAndDirectoryOperations {
             getContentRecursively(folder + File.separator + file.getName());
         }
         return;
+    }
+    
+    public String readTextFile(String fileName){
+        FileReader fr = null;
+            StringBuilder content = new StringBuilder();
+        try {
+            fr = new FileReader(fileName);
+            BufferedReader br = new BufferedReader(fr);
+            
+            String line = null;
+            while((line = br.readLine()) != null){
+                content.append(line);
+                content.append("\n");
+            }
+            
+            br.close();
+            fr.close();
+        } 
+        catch (FileNotFoundException ex) {
+            return "Khong tim thay file "+fileName;
+        } catch (IOException ex) {
+            return "Khong the doc file "+fileName;
+        }
+        
+        return content.toString();
+    }
+    
+    public boolean writeTextFile(String filename, String content){
+        boolean flag = true;
+        FileWriter fw;
+        try {
+            fw = new FileWriter(filename);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(content);
+            bw.close();
+            fw.close();
+        } 
+        catch (IOException ex) {
+            return false;
+        }
+        return flag;
     }
 }
