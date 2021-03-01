@@ -57,7 +57,34 @@ public class testArray {
 //                }
 //            }
 //        }
+//        Arrays.sort(c);
+//        System.out.println(Arrays.toString(c));
+
         Arrays.sort(c);
-        System.out.println(Arrays.toString(c));
+        System.out.print("Mang sau khi sap xep tang dan");
+          
+        System.out.print("Nhap gia tri can tim kiem x = ");
+        int x = Integer.parseInt(sc.nextLine());
+        
+        System.out.print(Arrays.toString(c));
+        int index = Arrays.binarySearch(c, x);
+        if (index == -1) {
+            System.out.println("Gia tri can tim kiem khong co trong mang");
+        }
+        else
+            System.out.println("Gia tri can tim kiem co trong mang tai vi tri: " + index);
+
+//        boolean flag = false;
+//        
+//        for (int i = 0; i < c.length; i++) {
+//            if (c[i] == x) {
+//                System.out.println("Gia tri can tim kiem co trong mang tai vi tri: " + i);
+//                flag = true;
+//                break;
+//            }
+//        }
+//        if (!flag) {
+//            System.out.println("Gia tri can tim kiem khong co trong mang");
+//        }
     }
 }
