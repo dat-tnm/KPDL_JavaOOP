@@ -36,12 +36,21 @@ public class testProductArrray {
 //                }
 //            }
 //        }
-        Arrays.sort(sp, new ProductCompareByPrice());
-        System.out.println("Mang san pham sap xep tang dan theo gia:");
-        System.out.println(Arrays.toString(sp));
+//        Arrays.sort(sp, new ProductCompareByPrice());
+//        System.out.println("Mang san pham sap xep tang dan theo gia:");
+//        System.out.println(Arrays.toString(sp));
         
         Arrays.sort(sp, new ProductCompareByName());
         System.out.println("Mang sp sap xep theo ten:");
         System.out.println(Arrays.toString(sp));
+        
+        int index = Arrays.binarySearch(sp, new Product("Sunsilk", 12), new ProductCompareByName());
+        if (index == -1) {
+           System.out.println("khong tim thay"); 
+        }
+        else{
+            System.out.println("Gia tri can tim là phan tu thu =" + index);
+            System.out.println(sp[index]);
+        }
     }
 }
