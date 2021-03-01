@@ -5,6 +5,10 @@
  */
 package javaapp00.chuong03.dohoa;
 
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javaapp00.chuong03.dohoa.frames.CoffeeFrame;
 import javaapp00.chuong03.dohoa.frames.XuatDuLieuFrame;
 
 /**
@@ -14,6 +18,7 @@ import javaapp00.chuong03.dohoa.frames.XuatDuLieuFrame;
 public class MyMainForm extends javax.swing.JFrame {
 
     XuatDuLieuFrame frm;
+    CoffeeFrame coffeeF;
     /**
      * Creates new form MyMainForm
      */
@@ -39,6 +44,7 @@ public class MyMainForm extends javax.swing.JFrame {
         mIExit = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         mIMangMotChieu = new javax.swing.JMenuItem();
+        mICoffee = new javax.swing.JMenuItem();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -82,6 +88,14 @@ public class MyMainForm extends javax.swing.JFrame {
         });
         jMenu4.add(mIMangMotChieu);
 
+        mICoffee.setText("Coffee");
+        mICoffee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mICoffeeActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mICoffee);
+
         jMenuBar2.add(jMenu4);
 
         setJMenuBar(jMenuBar2);
@@ -115,6 +129,20 @@ public class MyMainForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_mIMangMotChieuActionPerformed
 
+    private void mICoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mICoffeeActionPerformed
+        // TODO add your handling code here:
+        if (coffeeF == null || coffeeF.isClosed()) {
+            try {
+                coffeeF = new CoffeeFrame();
+                desktopPanel.add(coffeeF);
+                coffeeF.setLocation((this.getWidth() - coffeeF.getWidth())/2, (this.getHeight() - coffeeF.getHeight())/2);
+                coffeeF.setVisible(true);
+            } catch (ParseException ex) {
+                Logger.getLogger(MyMainForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_mICoffeeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -143,10 +171,8 @@ public class MyMainForm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MyMainForm().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MyMainForm().setVisible(true);
         });
     }
 
@@ -158,6 +184,7 @@ public class MyMainForm extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem mICoffee;
     private javax.swing.JMenuItem mIExit;
     private javax.swing.JMenuItem mIMangMotChieu;
     // End of variables declaration//GEN-END:variables

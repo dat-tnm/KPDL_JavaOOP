@@ -34,6 +34,7 @@ public class XuatDuLieuFrame extends javax.swing.JInternalFrame {
         panel1 = new javax.swing.JPanel();
         btn1 = new javax.swing.JButton();
 
+        setClosable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Vẽ dữ liệu mảng 1 chiều");
